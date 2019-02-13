@@ -52,7 +52,7 @@ public class ArticleResource {
      * @return
      */
     @GetMapping("/article")
-    public List<Article> list() {
+    public Iterable<Article> list() {
         log.debug("We just get the list of articles one more time");
         return articleService.findAll();
     }

@@ -4,6 +4,8 @@ import com.arangodb.springframework.annotation.Query;
 import com.arangodb.springframework.repository.ArangoRepository;
 import xyz.dassiorleando.arangodb.domain.Article;
 
+import java.util.List;
+
 /**
  * Article repository
  * @author dassiorleando
@@ -14,6 +16,6 @@ public interface ArticleRepository extends ArangoRepository<Article, String> {
     @Query("FOR a IN article FILTER a.title == @0 RETURN a")
     Iterable<Article> getArticleByTitle(String title);
 
-    Article findOneByTitle(String title);
+    Iterable<Article> findByTitle(String title);
 
 }

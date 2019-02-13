@@ -15,7 +15,7 @@ Resources
 
 Tasks list
 ----------
-- [x] Core files with spring-boot 2.0.5
+- [x] Core files with spring-boot 2.1.2
 - [x] ArangoDB custom database configuration
 - [x] Article's Model, Controller and Service
 - [x] Article's CRUD operations

@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
  * The Article model
  * @author dassiorleando
  */
-@Document
+@Document("article")
 public class Article {
 
     @Id

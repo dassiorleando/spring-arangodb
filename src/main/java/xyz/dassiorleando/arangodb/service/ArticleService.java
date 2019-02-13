@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import xyz.dassiorleando.arangodb.domain.Article;
 import xyz.dassiorleando.arangodb.repository.ArticleRepository;
 
-import java.util.List;
 import java.util.Optional;
 
 /**
@@ -31,7 +30,7 @@ public class ArticleService {
     /**
      * To update an article
      * @param article
-     * @return boolean true if it was successfully updated
+     * @return the updated article
      */
     public Article update(Article article) {
         String articleId = article.getId();
@@ -42,7 +41,7 @@ public class ArticleService {
     }
 
     /**
-     * Find a single article by it's id
+     * Find a single article by its id
      * @param articleId
      * @return article
      */
@@ -55,8 +54,8 @@ public class ArticleService {
      * Find all saved articles so far
      * @return
      */
-    public List<Article> findAll() {
-        return (List<Article>) articleRepository.findAll();
+    public Iterable<Article> findAll() {
+        return articleRepository.findAll();
     }
 
     /**
