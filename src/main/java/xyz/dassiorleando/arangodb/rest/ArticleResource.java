@@ -30,7 +30,7 @@ public class ArticleResource {
      * @param article
      * @return
      */
-    @PostMapping("/article")
+    @PostMapping("/articles")
     public Article create(@RequestBody @Valid Article article) {
         log.debug("Create an article with the properties {}", article);
         return articleService.save(article);
@@ -41,7 +41,7 @@ public class ArticleResource {
      * @param article
      * @return
      */
-    @PutMapping("/article")
+    @PutMapping("/articles")
     public Article update(@RequestBody @Valid Article article) {
         log.debug("Update the article of title {} with the properties {}", article.getTitle(), article);
         return articleService.update(article);
@@ -51,7 +51,7 @@ public class ArticleResource {
      * Get the list of all articles
      * @return
      */
-    @GetMapping("/article")
+    @GetMapping("/articles")
     public Iterable<Article> list() {
         log.debug("We just get the list of articles one more time");
         return articleService.findAll();
@@ -62,7 +62,7 @@ public class ArticleResource {
      * @param id
      * @return
      */
-    @GetMapping("/article/{id}")
+    @GetMapping("/articles/{id}")
     public Optional<Article> findByTitle(@PathVariable @NotNull String id) {
         log.debug("Load the article of id: {}", id);
         return articleService.findOne(id);
@@ -72,7 +72,7 @@ public class ArticleResource {
      * Delete an article by its title
      * @param id
      */
-    @DeleteMapping("/article/{id}")
+    @DeleteMapping("/articles/{id}")
     public void deleteById(@PathVariable @NotNull String id) {
         log.debug("Delete the article of id: {}", id);
         articleService.delete(id);
